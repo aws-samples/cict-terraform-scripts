@@ -1,0 +1,14 @@
+.tfstate*
+.terraform
+plan.out
+*.plan.out
+.terraform*
+terraform.tfstate
+terraform.tfstate.backup
+*.terraform.tfstate
+*.terraform.tfstate.backup
+*.json
+*.plan
+.DS_Store
+terraform/.DS_Store
+/*.DS_Store
