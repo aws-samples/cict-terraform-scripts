@@ -36,13 +36,15 @@
 
 ## Introduction
 
-In this guide, we provide an in-depth explanation of how DevOps-focused development teams 
-can harness the power of AWS developer tools in conjunction with robust open-source tools 
-such as [*TFLint*](https://github.com/terraform-linters/tflint),
+In this guide, we provide detailed explanation of how DevOps-focused development teams can
+utilize AWS developer tools, along with powerful open-source tools like
+[*TFLint*](https://github.com/terraform-linters/tflint),
 [*Terratest*](https://terratest.gruntwork.io/) and 
-[*Checkov*](https://www.checkov.io/). 
-This comprehensive guide will help you identify and rectify anomalies in your infrastructure 
-before provisioning resources for your production workloads in the AWS cloud.
+[*Checkov*](https://www.checkov.io/), to identify anomalies related to infrastructure before 
+actually provisioning resources to run your production workloads in the AWS cloud. It's 
+important for you to maintain compliance not just with AWS best practices but also with your
+organization's local security and compliance teams. 
+
 ## Target Audience
 
 Software developers who use `Terraform` to code AWS Infrastructure. Developers shoud have basic coding experience with `bash` and `GO` Language.
@@ -111,7 +113,7 @@ As illustrated in the architecture, we can employ multiple CodeBuild Actions to 
 Check out the code from the AWS GitHub repository using the following command
 
 ```
-git clone https://github.com/aws-samples/cict-terraform-scripts-gl.git
+git clone https://github.com/aws-samples/cict-terraform-scripts.git
 
 ```
 
