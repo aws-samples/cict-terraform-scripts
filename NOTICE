@@ -1,0 +1,9 @@
+Requirements:
+
+Terraform - 1.2.2
+Python - 3.8
+
+Checkov - https://www.checkov.io/ - 2.2.x
+Terratest - https://terratest.gruntwork.io/ - 0.4x.x
+TFLint - https://github.com/terraform-linters/tflint - 0.42.x
+TFValidate - https://github.com/justinm/tfvalidate - 0.11.x
