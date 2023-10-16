@@ -1,0 +1,45 @@
+version: 0.2
+
+env:
+  variables:
+    ENVIRONMENT: test
+    TF_IN_AUTOMATION: 1
+    TERRAFORM_VERSION: 1.2.2 
+    BASE_PATH: terraform/modules
+
+phases:
+  install:
+    runtime-versions:
+      golang: 1.16
+      python: 3.9
+    commands:
+      - echo Starting install command
+      - ./${BASE_PATH}/install.sh
+      - 'go version'
+  pre_build:
+    commands:
+      - echo Starting pre-build...
+      - ./${BASE_PATH}/prebuild.sh
+  build:
+    commands:
+      - echo Starting build
+      - ./${BASE_PATH}/terratest.sh
+  post_build:
+    commands:
+      - echo Test Performed completed on `date`
+
+reports:
+  Terratest-reports:
+    files:
+      - "**/*.xml"
+      - "**/*.log"
+    base-directory: "terraform/modules/cict/test/reports"
+    discard-paths: no
+
+artifacts:
+  files:
+    - "**/*.log"
+    - "**/*.xml"
+  name: reports
+  discard-paths: no
+  base-directory: "terraform/modules/cict/test/reports"

@@ -1,0 +1,39 @@
+version: 0.2
+
+env:
+  variables:
+    ENVIRONMENT: test
+    TF_IN_AUTOMATION: 1
+    TERRAFORM_VERSION: 1.2.2
+    BASE_PATH: terraform/modules
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - echo Starting install command
+      - ./${BASE_PATH}/install.sh
+  pre_build:
+    commands:
+      - echo Starting pre-build...
+      - ./${BASE_PATH}/prebuild.sh
+  build:
+    commands:
+      - echo Starting build
+      - ./${BASE_PATH}/checkov.sh
+  post_build:
+    commands:
+      - echo Test Performed completed on `date`
+
+reports:
+  Checkov-reports:
+    files:
+      - "**/*.xml"
+    discard-paths: no
+    
+artifacts:
+  files:
+    - "**/*.xml"
+  name: reports
+  discard-paths: no
