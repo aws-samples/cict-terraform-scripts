@@ -1,7 +1,7 @@
 # Continuously test Terraform Infrastructure code on AWS with TFlint, Terratest, and Checkov
 
 ## Table of Contents
-- [Introduction]()
+- [Introduction](#introduction)
   - [Why Infrastructure Testing Matters](#why-infrastructure-testing-matters)
   - [Target Audience](#target-audience)
   - [UseCase](#usecase)
